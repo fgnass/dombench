@@ -3,8 +3,8 @@
 
 ## TL;DR
 
- * dom.js is about 2.8x faster than jsdom
- * domino is ~2.2x faster than dom.js and ~6.3x faster than jsdom
+ * dom.js is about 1.75x faster than jsdom
+ * domino is ~2.2x faster than dom.js and ~3.9x faster than jsdom
 
 ## Running the tests
 
@@ -23,13 +23,13 @@
 
 	$node benchmark -i jsdom
 	Node v0.5.10: Running each test 1500 time(s) backed by jsdom.
-	append: 2285ms
-	empty: 1784ms
-	parse: 5590ms
-	serialize: 71ms
-	weld: 13443ms
+	append: 875ms
+	empty: 559ms
+	parse: 2710ms
+	serialize: 62ms
+	weld: 10239ms
 	--------------
-	total: 23180ms
+	total: 14452ms
 
 ## dom.js
 
