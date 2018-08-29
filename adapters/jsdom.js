@@ -1,7 +1,7 @@
-var jsdom = require('jsdom');
+const {JSDOM} = require('jsdom');
 
-var opts = {features: {QuerySelector: true }};
+const opts = {features: {QuerySelector: true }};
 
 module.exports = function(html) {
-	return jsdom.jsdom(html, null, opts);
+	return new JSDOM(html, opts).window.document;
 };

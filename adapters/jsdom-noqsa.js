@@ -1,5 +1,5 @@
-var jsdom = require('jsdom');
+const {JSDOM} = require('jsdom');
 
 module.exports = function(html) {
-	return jsdom.jsdom(html);
+	return new JSDOM(html);
 };

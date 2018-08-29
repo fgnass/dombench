@@ -1,12 +1,29 @@
 {
-	"name": "dombench",
-	"description": "Benchmark suite for DOM implementations",
-	"version": "0.0.1",
-	"dependencies": {
-		"optimist": "0.3.1",
-		"jsdom": "https://github.com/tmpvar/jsdom/tarball/master",
-		"domino": "1.0.x",
-		"weld": "0.2.x",
-		"html5": "0.3.5"
-	}
+  "name": "dombench",
+  "version": "1.0.0",
+  "description": "Benchmark tool for Node.js DOM implementations",
+  "main": "benchmark.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fgnass/dombench.git"
+  },
+  "author": "Felix Gnass",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fgnass/dombench/issues"
+  },
+  "homepage": "https://github.com/fgnass/dombench#readme",
+  "dependencies": {
+    "domino": "^2.1.0",
+    "html5": "^1.0.5",
+    "jsdom": "^12.0.0",
+    "optimist": "^0.6.1",
+    "weld": "^0.2.2"
+  }
 }

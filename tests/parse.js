@@ -1,7 +1,7 @@
-var fs = require('fs');
-var html = fs.readFileSync(__dirname + '/contacts.html', 'utf8');
+const fs = require('fs');
+const html = fs.readFileSync(__dirname + '/contacts.html', 'utf8');
 
 module.exports = function(createDocument) {
-  var document = createDocument(html);
+  const document = createDocument(html);
   document.body.innerHTML = '<h1>Hello world</h1>';
 };
