@@ -1,12 +1,12 @@
-var fs = require('fs');
-var optimist = require('optimist');
+const fs = require('fs');
+const {usage} = require('optimist');
 
-var tests = fs.readdirSync(__dirname + '/tests')
-  .filter(function(f) {return f.match(/\.js$/)})
-  .map(function(f) {return f.replace(/\.js$/, '')});
+const tests = fs.readdirSync(__dirname + '/tests')
+  .filter(f => f.match(/\.js$/))
+  .map(f => f.replace(/\.js$/, ''));
 
-var argv = optimist
-  .usage('Run DOM benchmarks.', {
+const argv =
+  usage('Run DOM benchmarks.', {
     impl: {
       description: 'which DOM implementation to use [jsdom|domino|domjs]',
       alias: 'i'
@@ -32,16 +32,18 @@ var argv = optimist
   .demand('impl')
   .argv;
 
-var impl = require('./adapters/' + argv.impl);
+const impl = require('./adapters/' + argv.impl);
 console.log('Node %s: Running each test %s time(s) backed by %s.', process.version, argv.num, argv.impl);
 console.time('total');
 tests.forEach(function(test) {
   if (!argv.grep || test.match(argv.grep)) {
-    var t = require('./tests/' + test);
+    const t = require('./tests/' + test);
     console.time(test);
-    for (var i=0; i < argv.num; i++) {
-      var res = t(impl);
-      if (!i && argv.debug) console.log('%s: %s', test, res || '[no output]');
+    for (let i = 0; i < argv.num; i++) {
+      const res = t(impl);
+      if (!i && argv.debug) {
+        console.log('%s: %s', test, res || '[no output]');
+      }
     }
     console.timeEnd(test);
   }

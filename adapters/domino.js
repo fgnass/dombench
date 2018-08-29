@@ -1,4 +1,4 @@
-var domino = require('domino');
+const domino = require('domino');
 
 module.exports = function(html) {
   return domino.createDocument(html);
